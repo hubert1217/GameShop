@@ -8,11 +8,11 @@ namespace GameShop.ViewModels
 {
     public class HomeViewModel
     {
-        IEnumerable<Genre> Genres { get; set; }
+        public IEnumerable<Genre> Genres { get; set; }
 
-        IEnumerable<Game> NewArrivals { get; set; }
+        public IEnumerable<Game> NewArrivals { get; set; }
 
-        IEnumerable<Game> Bestsellers { get; set; }
+        public IEnumerable<Game> Bestsellers { get; set; }
 
     }
 }
