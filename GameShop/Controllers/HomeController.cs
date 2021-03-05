@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GameShop.DAL;
+using GameShop.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +10,14 @@ namespace GameShop.Controllers
 {
     public class HomeController : Controller
     {
+
+        private StoreContext db = new StoreContext();
+
         public ActionResult Index()
         {
+            var genres = db.Genres.ToList();
+            var newArrivals = db.Games.Where(a => !a.IsHidden).OrderByDescending(a => a.DateAdded).Take(3).ToList();
+            var bestsellers = db.Games.Where(a => !a.IsHidden && a.IsBestseller).OrderBy(g => Guid.NewGuid()).Take(3).ToList();
             return View();
         }
 

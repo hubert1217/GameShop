@@ -9,6 +9,11 @@ namespace GameShop.DAL
 {
     public class StoreContext: DbContext
     {
+        public StoreContext() : base("StoreContext") 
+        { 
+            
+        }
+
         public DbSet<Game> Games { get; set; }
 
         public DbSet<Genre> Genres { get; set; }
