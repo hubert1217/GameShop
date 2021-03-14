@@ -1,0 +1,11 @@
+﻿@model IEnumerable<GameShop.Models.Genre>
+
+<ul>
+    @foreach (var genre in Model)
+    {
+        <li>
+            <a href="@Url.Action("List","Store", new { genrename = genre.GenreName.ToString() })"
+        </li>
+    }
+
+</ul>

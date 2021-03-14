@@ -17,5 +17,6 @@ namespace GameShop.DAL
         public DbSet<Game> Games { get; set; }
 
         public DbSet<Genre> Genres { get; set; }
+        public object Game { get; internal set; }
     }
 }
